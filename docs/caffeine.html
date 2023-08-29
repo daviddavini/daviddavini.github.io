@@ -1,7 +1,42 @@
-<H1>caffeine</H1>
-<UL>
-	<LI>8/20 520 mg</LI>
-	<LI>8/21 120 mg</LI>
-	<LI>8/22 165 mg</LI>
-	<LI>8/23 350 mg</LI>
-</UL>
+<div>
+  <canvas id="caffeine"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const data = [
+    { day: '8/20', amount: 520 },
+    { day: '8/21', amount: 120 },
+    { day: '8/22', amount: 165 },
+    { day: '8/23', amount: 350 },
+  ];
+
+  new Chart(
+    document.getElementById('caffeine'),
+    {
+      type: 'line',
+      options: {
+        animation: false,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            enabled: false
+          }
+        }
+      },
+      data: {
+        labels: data.map(row => row.day),
+        datasets: [
+          {
+            label: 'Caffeine consumption per day (in mg\'s)',
+            data: data.map(row => row.amount)
+          }
+        ]
+      }
+    }
+  );
+
+</script>
