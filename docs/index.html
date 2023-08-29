@@ -1,9 +1,8 @@
 <STYLE>
   span {
-    display: flex;
-  }
-  span > div {
-    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 </STYLE>
 
@@ -13,6 +12,12 @@
 </DIV>
 <DIV>
   <CANVAS id="books"></CANVAS>
+</DIV>
+<DIV>
+  <CANVAS id="exercise"></CANVAS>
+</DIV>
+<DIV>
+  <CANVAS id="sleep"></CANVAS>
 </DIV>
 </SPAN>
 
@@ -61,6 +66,46 @@
   ];
   new Chart(
     document.getElementById('books'),
+    {
+      type: 'bar',
+      data: {
+        labels: data.map(row => row.day),
+        datasets: [
+          {
+            label: 'Pages read',
+            data: data.map(row => row.amount)
+          }
+        ]
+      }
+    }
+  );
+  data = [
+    { day: '8/26', amount: 68+12 },
+    { day: '8/27', amount: 24+35 },
+    { day: '8/28', amount: 3+0 },
+  ];
+  new Chart(
+    document.getElementById('exercise'),
+    {
+      type: 'bar',
+      data: {
+        labels: data.map(row => row.day),
+        datasets: [
+          {
+            label: 'Pages read',
+            data: data.map(row => row.amount)
+          }
+        ]
+      }
+    }
+  );
+  data = [
+    { day: '8/26', amount: 68+12 },
+    { day: '8/27', amount: 24+35 },
+    { day: '8/28', amount: 3+0 },
+  ];
+  new Chart(
+    document.getElementById('sleep'),
     {
       type: 'bar',
       data: {
