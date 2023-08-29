@@ -16,16 +16,10 @@
   new Chart(
     document.getElementById('caffeine'),
     {
-      type: 'line',
+      type: 'bar',
       options: {
         animation: false,
         plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-            enabled: false
-          },
 	  annotation: {
             annotations: {
               line: {
@@ -41,7 +35,7 @@
         labels: data.map(row => row.day),
         datasets: [
           {
-            label: 'Caffeine consumption per day (in mg\'s)',
+            label: 'Caffeine consumption (in mg\'s)',
             data: data.map(row => row.amount)
           }
         ]
