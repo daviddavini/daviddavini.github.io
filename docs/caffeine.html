@@ -5,6 +5,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
 
+<script src="mychart.js"></script>
 <script>
   const data = [
     { day: '8/20', amount: 520 },
@@ -12,35 +13,6 @@
     { day: '8/22', amount: 165 },
     { day: '8/23', amount: 350 },
   ];
-
-  new Chart(
-    document.getElementById('caffeine'),
-    {
-      type: 'bar',
-      options: {
-        animation: false,
-        plugins: {
-	  annotation: {
-            annotations: {
-              line: {
-                type: 'line',
-		yMin: 30,
-                yMax: 30,
-              }
-            }
-          }
-        }
-      },
-      data: {
-        labels: data.map(row => row.day),
-        datasets: [
-          {
-            label: 'Caffeine consumption (in mg\'s)',
-            data: data.map(row => row.amount)
-          }
-        ]
-      }
-    }
-  );
-
+  const goal = 30;
+  myChart(data, goal);
 </script>
