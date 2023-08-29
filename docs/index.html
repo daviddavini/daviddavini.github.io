@@ -83,19 +83,30 @@
     }
   );
   data = [
-    { day: '8/26', amount: 68+12 },
-    { day: '8/27', amount: 24+35 },
-    { day: '8/28', amount: 3+0 },
+    { day: '8/28', amount: 1 },
   ];
   new Chart(
     document.getElementById('exercise'),
     {
       type: 'bar',
+      options: {
+        plugins: {
+	  annotation: {
+            annotations: {
+              line: {
+                type: 'line',
+		yMin: 3,
+                yMax: 3,
+              }
+            }
+          }
+        }
+      },
       data: {
         labels: data.map(row => row.day),
         datasets: [
           {
-            label: 'Pages read',
+            label: 'Hours of exercise',
             data: data.map(row => row.amount)
           }
         ]
@@ -103,19 +114,31 @@
     }
   );
   data = [
-    { day: '8/26', amount: 68+12 },
-    { day: '8/27', amount: 24+35 },
-    { day: '8/28', amount: 3+0 },
+    { day: '8/28', amount: 8 },
+    { day: '8/29', amount: 6 },
   ];
   new Chart(
     document.getElementById('sleep'),
     {
       type: 'bar',
+      options: {
+        plugins: {
+	  annotation: {
+            annotations: {
+              line: {
+                type: 'line',
+		yMin: 8,
+                yMax: 8,
+              }
+            }
+          }
+        }
+      },
       data: {
         labels: data.map(row => row.day),
         datasets: [
           {
-            label: 'Pages read',
+            label: 'Hours of sleep',
             data: data.map(row => row.amount)
           }
         ]
