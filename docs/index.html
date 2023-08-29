@@ -1,2 +1,48 @@
-<H1>HELLO WORLD</H1>
-<IFRAME SRC="caffeine.html"></IFRAME>
+<DIV>
+  <CANVAS id="caffeine"></CANVAS>
+</DIV>
+
+<SCRIPT src="https://cdn.jsdelivr.net/npm/chart.js"></SCRIPT>
+<SCRIPT src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></SCRIPT>
+
+<SCRIPT>
+  function myChart(data, goal) {
+    new Chart(
+      document.getElementById('caffeine'),
+      {
+        type: 'bar',
+        options: {
+          animation: false,
+          plugins: {
+  	  annotation: {
+              annotations: {
+                line: {
+                  type: 'line',
+  		yMin: 30,
+                  yMax: 30,
+                }
+              }
+            }
+          }
+        },
+        data: {
+          labels: data.map(row => row.day),
+          datasets: [
+            {
+              label: 'Caffeine consumption (in mg\'s)',
+              data: data.map(row => row.amount)
+            }
+          ]
+        }
+      }
+    );
+  }
+  const data = [
+    { day: '8/20', amount: 520 },
+    { day: '8/21', amount: 120 },
+    { day: '8/22', amount: 165 },
+    { day: '8/23', amount: 350 },
+  ];
+  const goal = 30;
+  myChart(data, goal);
+</SCRIPT>
