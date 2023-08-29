@@ -18,7 +18,6 @@
     {
       type: 'bar',
       options: {
-        animation: false,
         plugins: {
 	  annotation: {
             annotations: {
@@ -52,20 +51,6 @@
     document.getElementById('books'),
     {
       type: 'bar',
-      options: {
-        animation: false,
-        plugins: {
-	  annotation: {
-            annotations: {
-              line: {
-                type: 'line',
-		yMin: 30,
-                yMax: 30,
-              }
-            }
-          }
-        }
-      },
       data: {
         labels: data.map(row => row.day),
         datasets: [
