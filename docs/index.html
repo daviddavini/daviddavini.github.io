@@ -1,48 +1,80 @@
 <DIV>
   <CANVAS id="caffeine"></CANVAS>
+  <CANVAS id="books"></CANVAS>
 </DIV>
 
 <SCRIPT src="https://cdn.jsdelivr.net/npm/chart.js"></SCRIPT>
 <SCRIPT src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></SCRIPT>
 
 <SCRIPT>
-  function myChart(data, goal) {
-    new Chart(
-      document.getElementById('caffeine'),
-      {
-        type: 'bar',
-        options: {
-          animation: false,
-          plugins: {
-  	  annotation: {
-              annotations: {
-                line: {
-                  type: 'line',
-  		yMin: 30,
-                  yMax: 30,
-                }
+  let data = [
+    { day: '8/26', amount: 520 },
+    { day: '8/27', amount: 120 },
+    { day: '8/28', amount: 165 },
+    { day: '8/29', amount: 350 },
+  ];
+  new Chart(
+    document.getElementById('caffeine'),
+    {
+      type: 'bar',
+      options: {
+        animation: false,
+        plugins: {
+	  annotation: {
+            annotations: {
+              line: {
+                type: 'line',
+		yMin: 30,
+                yMax: 30,
               }
             }
           }
-        },
-        data: {
-          labels: data.map(row => row.day),
-          datasets: [
-            {
-              label: 'Caffeine consumption (in mg\'s)',
-              data: data.map(row => row.amount)
-            }
-          ]
         }
+      },
+      data: {
+        labels: data.map(row => row.day),
+        datasets: [
+          {
+            label: 'Caffeine consumption (in mg\'s)',
+            data: data.map(row => row.amount)
+          }
+        ]
       }
-    );
-  }
-  const data = [
-    { day: '8/20', amount: 520 },
-    { day: '8/21', amount: 120 },
-    { day: '8/22', amount: 165 },
-    { day: '8/23', amount: 350 },
+    }
+  );
+  data = [
+    { day: '8/26', amount: 520 },
+    { day: '8/27', amount: 120 },
+    { day: '8/28', amount: 165 },
+    { day: '8/29', amount: 350 },
   ];
-  const goal = 30;
-  myChart(data, goal);
+  new Chart(
+    document.getElementById('books'),
+    {
+      type: 'bar',
+      options: {
+        animation: false,
+        plugins: {
+	  annotation: {
+            annotations: {
+              line: {
+                type: 'line',
+		yMin: 30,
+                yMax: 30,
+              }
+            }
+          }
+        }
+      },
+      data: {
+        labels: data.map(row => row.day),
+        datasets: [
+          {
+            label: 'Pages read',
+            data: data.map(row => row.amount)
+          }
+        ]
+      }
+    }
+  );
 </SCRIPT>
