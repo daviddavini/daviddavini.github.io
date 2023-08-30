@@ -71,121 +71,89 @@
     x.duration = ((+eh)*60+(+em) - (+sh)*60+(+sm)) / 60;
     x.duration = x.duration>0 ? x.duration : x.duration+24;
   }))
-
-  new Chart(
-    document.getElementById('caffeine'),
-    {
-      type: 'bar',
-      options: {
-        maintainAspectRatio: false,
-        plugins: {
-          annotation: {
-            annotations: {
-              line: {
-                type: 'line',
-                yMin: 30,
-                yMax: 30,
+  
+  function makeChart(params) {
+    new Chart(
+      document.getElementById(params.id),
+      {
+        type: 'bar',
+        options: {
+          scales: {
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                display: false,
+              },
+              border: {
+                display: false,
+              },
+            },
+            y: {
+              grid: {
+                display: false,
+              },
+              border: {
+                display: false,
+              },
+            },
+          },
+          maintainAspectRatio: false,
+          plugins: {
+            annotation: {
+              annotations: {
+                line: {
+                  type: 'line',
+                  yMin: params.goal,
+                  yMax: params.goal,
+                }
               }
             }
           }
-        }
-      },
-      data: {
-        labels: data.map(row => row.day),
-        datasets: [
-          {
-            label: 'Caffeine consumption (in mg\'s)',
-            data: data.map(row => row.caffeine.reduce((a, b) => a + b.amount, 0))
-          }
-        ]
-      }
-    }
-  );
-  new Chart(
-    document.getElementById('books'),
-    {
-      type: 'bar',
-      options: {
-        maintainAspectRatio: false,
-        plugins: {
-          annotation: {
-            annotations: {
-              line: {
-                type: 'line',
-                yMin: 100,
-                yMax: 100,
-              }
+        },
+        data: {
+          labels: params.full_data.map(row => row.day),
+          datasets: [
+            {
+              label: params.label,
+              data: params.data,
             }
-          }
+          ]
         }
-      },
-      data: {
-        labels: data.map(row => row.day),
-        datasets: [
-          {
-            label: 'Pages read',
-            data: data.map(row => row.reading.reduce((a, b) => a + (b.end - b.start), 0))
-          }
-        ]
       }
-    }
-  );
-  new Chart(
-    document.getElementById('exercise'),
-    {
-      type: 'bar',
-      options: {
-        maintainAspectRatio: false,
-        plugins: {
-          annotation: {
-            annotations: {
-              line: {
-                type: 'line',
-                yMin: 180,
-                yMax: 180,
-              }
-            }
-          }
-        }
-      },
-      data: {
-        labels: data.map(row => row.day),
-        datasets: [
-          {
-            label: 'Minutes of exercise',
-            data: data.map(row => row.exercise.reduce((a, b) => a + b.minutes, 0))
-          }
-        ]
-      }
-    }
-  );
-  new Chart(
-    document.getElementById('sleep'),
-    {
-      type: 'bar',
-      options: {
-        maintainAspectRatio: false,
-        plugins: {
-          annotation: {
-            annotations: {
-              line: {
-                type: 'line',
-                yMin: 3,
-                yMax: 3,
-              }
-            }
-          }
-        }
-      },
-      data: {
-        labels: data.map(row => row.day),
-        datasets: [
-          {
-            label: 'Hours of sleep',
-            data: data.map(row => row.sleep.reduce((a, b) => a + b.duration, 0)),
-          }
-        ]
-      }
-    }
-  );
+    );
+  }
+  const caffeine_params = {
+    id: 'caffeine',
+    goal: 30,
+    full_data: data,
+    label: 'Caffeine consumption (in mg\'s)',
+    data: data.map(row => row.caffeine.reduce((a, b) => a + b.amount, 0)),
+  }
+  makeChart(caffeine_params);
+  const reading_params = {
+    id: 'books',
+    goal: 100,
+    full_data: data,
+    label: 'Pages read',
+    data: data.map(row => row.reading.reduce((a, b) => a + (b.end - b.start), 0))
+  }
+  makeChart(reading_params);
+  const exercise_params = {
+    id: 'exercise',
+    goal: 180,
+    full_data: data,
+    label: 'Minutes of exercise',
+    data: data.map(row => row.exercise.reduce((a, b) => a + b.minutes, 0))
+  }
+  makeChart(exercise_params);
+  const sleep_params = {
+    id: 'sleep',
+    goal: 9,
+    full_data: data,
+    label: 'Hours of sleep',
+    data: data.map(row => row.sleep.reduce((a, b) => a + b.duration, 0)),
+  }
+  makeChart(sleep_params);
 </SCRIPT>
