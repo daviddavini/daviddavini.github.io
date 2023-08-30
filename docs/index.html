@@ -27,13 +27,8 @@
 <SCRIPT src="https://cdn.jsdelivr.net/npm/chart.js"></SCRIPT>
 <SCRIPT src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></SCRIPT>
 
+<SCRIPT SRC="data.js"></SCRIPT>
 <SCRIPT>
-  let data = [
-    { day: '8/25', amount: 520 },
-    { day: '8/26', amount: 120 },
-    { day: '8/27', amount: 165 },
-    { day: '8/28', amount: 350 },
-  ];
   new Chart(
     document.getElementById('caffeine'),
     {
@@ -56,7 +51,7 @@
         datasets: [
           {
             label: 'Caffeine consumption (in mg\'s)',
-            data: data.map(row => row.amount)
+            data: data.map(row => row.caffeine.reduce((a, b) => a + b.amount, 0))
           }
         ]
       }
