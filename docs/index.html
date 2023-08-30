@@ -1,15 +1,16 @@
 <STYLE>
-  span {
+  div {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    height: 45vh;
   }
-  span > div {
+  div > div {
     margin: 2%;
   }
 </STYLE>
 
-<SPAN>
+<DIV>
   <DIV>
     <CANVAS id="caffeine"></CANVAS>
   </DIV>
@@ -22,7 +23,7 @@
   <DIV>
     <CANVAS id="sleep"></CANVAS>
   </DIV>
-</SPAN>
+</DIV>
 
 <SCRIPT src="https://cdn.jsdelivr.net/npm/chart.js"></SCRIPT>
 <SCRIPT src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></SCRIPT>
