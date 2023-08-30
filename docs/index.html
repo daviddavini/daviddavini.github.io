@@ -1,4 +1,7 @@
 <STYLE>
+  * {
+    background-color: rgb(10, 10, 15);
+  }
   div {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -68,16 +71,23 @@
   data.forEach(row => row.sleep.forEach(x => {
     let [sh, sm] = x.start.split(':');
     let [eh, em] = x.end.split(':');
-    x.duration = ((+eh)*60+(+em) - (+sh)*60+(+sm)) / 60;
+    x.duration = ((+eh)*60+(+em) - (+sh)*60+(+sm));
     x.duration = x.duration>0 ? x.duration : x.duration+24;
   }))
   
   function makeChart(params) {
+    Chart.defaults.color = "rgb(0,150,30)";
+    Chart.defaults.font.family = 'Courier New, monospaced'
     new Chart(
       document.getElementById(params.id),
       {
         type: 'bar',
         options: {
+          elements: {
+            bar: {
+              backgroundColor: 'rgb(0,75,10)',
+            },
+          },
           clip: false,
           scales: {
             x: {
@@ -108,9 +118,9 @@
                   type: 'line',
                   yMin: params.goal,
                   yMax: params.goal,
-                  borderColor: 'rgb(64, 200, 64)',
-                  borderWidth: 3,
-                  borderDash: [3],
+                  borderColor: 'rgb(100, 0, 50)',
+                  borderWidth: 5,
+                  borderDash: [2],
                 }
               }
             }
@@ -132,7 +142,7 @@
     id: 'caffeine',
     goal: 30,
     full_data: data,
-    label: 'Caffeine consumption (in mg\'s)',
+    label: 'Milligrams of caffeine',
     data: data.map(row => row.caffeine.reduce((a, b) => a + b.amount, 0)),
   }
   makeChart(caffeine_params);
@@ -140,13 +150,13 @@
     id: 'books',
     goal: 100,
     full_data: data,
-    label: 'Pages read',
+    label: 'Pages of reading',
     data: data.map(row => row.reading.reduce((a, b) => a + (b.end - b.start), 0))
   }
   makeChart(reading_params);
   const exercise_params = {
     id: 'exercise',
-    goal: 180,
+    goal: 3*60,
     full_data: data,
     label: 'Minutes of exercise',
     data: data.map(row => row.exercise.reduce((a, b) => a + b.minutes, 0))
@@ -154,9 +164,9 @@
   makeChart(exercise_params);
   const sleep_params = {
     id: 'sleep',
-    goal: 9,
+    goal: 9*60,
     full_data: data,
-    label: 'Hours of sleep',
+    label: 'Minutes of sleep',
     data: data.map(row => row.sleep.reduce((a, b) => a + b.duration, 0)),
   }
   makeChart(sleep_params);
