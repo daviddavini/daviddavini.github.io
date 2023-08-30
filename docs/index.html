@@ -76,8 +76,10 @@
   }))
   
   function makeChart(params) {
-    Chart.defaults.color = "rgb(0,150,30)";
+    Chart.defaults.color = "rgb(0,200,80)";
     Chart.defaults.font.family = 'Courier New, monospaced'
+//    Chart.defaults.font.weight = 'bold'
+    Chart.defaults.font.size = 15
     new Chart(
       document.getElementById(params.id),
       {
@@ -85,7 +87,7 @@
         options: {
           elements: {
             bar: {
-              backgroundColor: 'rgb(0,75,10)',
+              backgroundColor: 'rgb(0,120,40)',
             },
           },
           clip: false,
@@ -118,7 +120,7 @@
                   type: 'line',
                   yMin: params.goal,
                   yMax: params.goal,
-                  borderColor: 'rgb(100, 0, 50)',
+                  borderColor: 'rgb(200, 0, 120)',
                   borderWidth: 5,
                   borderDash: [2],
                 }
@@ -142,7 +144,7 @@
     id: 'caffeine',
     goal: 30,
     full_data: data,
-    label: 'Milligrams of caffeine',
+    label: 'caffeine (mg)'.toUpperCase(),
     data: data.map(row => row.caffeine.reduce((a, b) => a + b.amount, 0)),
   }
   makeChart(caffeine_params);
@@ -150,7 +152,7 @@
     id: 'books',
     goal: 100,
     full_data: data,
-    label: 'Pages of reading',
+    label: 'books (pages)'.toUpperCase(),
     data: data.map(row => row.reading.reduce((a, b) => a + (b.end - b.start), 0))
   }
   makeChart(reading_params);
@@ -158,7 +160,7 @@
     id: 'exercise',
     goal: 3*60,
     full_data: data,
-    label: 'Minutes of exercise',
+    label: 'exercise (mins)'.toUpperCase(),
     data: data.map(row => row.exercise.reduce((a, b) => a + b.minutes, 0))
   }
   makeChart(exercise_params);
@@ -166,7 +168,7 @@
     id: 'sleep',
     goal: 9*60,
     full_data: data,
-    label: 'Minutes of sleep',
+    label: 'sleep (mins)'.toUpperCase(),
     data: data.map(row => row.sleep.reduce((a, b) => a + b.duration, 0)),
   }
   makeChart(sleep_params);
