@@ -29,17 +29,60 @@
 
 <SCRIPT SRC="data.js"></SCRIPT>
 <SCRIPT>
+  const origin = Date.parse('2023-08-19');
+  const ONE_DAY = 86400000;
+  const today = (new Date()).getTime();
+  let x = origin;
+  let full_data = [];
+  data.forEach(row => {
+    t = Date.parse(row.day);
+    while (x < t) {
+      full_data.push({day: (new Date(x)).toLocaleDateString()});
+      x += ONE_DAY;
+    }
+    full_data.push(row);
+    x += ONE_DAY;
+  });
+  while (x+ONE_DAY < today) {
+    full_data.push({day: (new Date(x)).toLocaleDateString()});
+    x += ONE_DAY;
+  }
+  data = full_data;
+
+  data.forEach(row => {
+    if (!("caffeine" in row)) {
+      row.caffeine = []
+    }
+    if (!("reading" in row)) {
+      row.reading = []
+    }
+    if (!("exercise" in row)) {
+      row.exercise = []
+    }
+    if (!("sleep" in row)) {
+      row.sleep = []
+    }
+  });
+
+  data.forEach(row => row.sleep.forEach(x => {
+    let [sh, sm] = x.start.split(':');
+    let [eh, em] = x.end.split(':');
+    x.duration = ((+eh)*60+(+em) - (+sh)*60+(+sm)) / 60;
+    x.duration = x.duration>0 ? x.duration : x.duration+24;
+  }))
+
   new Chart(
     document.getElementById('caffeine'),
     {
       type: 'bar',
       options: {
+        maintainAspectRatio: false,
         plugins: {
-	  annotation: {
+          annotation: {
             annotations: {
               line: {
                 type: 'line',
-		yMin: 30,
+                yMin: 30,
                 yMax: 30,
               }
             }
@@ -57,40 +100,47 @@
       }
     }
   );
-  data = [
-    { day: '8/26', amount: 68+12 },
-    { day: '8/27', amount: 24+35 },
-    { day: '8/28', amount: 3+0 },
-  ];
   new Chart(
     document.getElementById('books'),
     {
       type: 'bar',
+      options: {
+        maintainAspectRatio: false,
+        plugins: {
+          annotation: {
+            annotations: {
+              line: {
+                type: 'line',
+                yMin: 100,
+                yMax: 100,
+              }
+            }
+          }
+        }
+      },
       data: {
         labels: data.map(row => row.day),
         datasets: [
           {
             label: 'Pages read',
-            data: data.map(row => row.amount)
+            data: data.map(row => row.reading.reduce((a, b) => a + (b.end - b.start), 0))
           }
         ]
       }
     }
   );
-  data = [
-    { day: '8/28', amount: 1 },
-  ];
   new Chart(
     document.getElementById('exercise'),
     {
       type: 'bar',
       options: {
+        maintainAspectRatio: false,
         plugins: {
-	  annotation: {
+          annotation: {
             annotations: {
               line: {
                 type: 'line',
-		yMin: 3,
+                yMin: 3,
                 yMax: 3,
               }
             }
@@ -102,28 +152,25 @@
         datasets: [
           {
             label: 'Hours of exercise',
-            data: data.map(row => row.amount)
+            data: data.map(row => row.exercise.reduce((a, b) => a + b.minutes/60, 0))
           }
         ]
       }
     }
   );
-  data = [
-    { day: '8/28', amount: 8 },
-    { day: '8/29', amount: 6 },
-  ];
   new Chart(
     document.getElementById('sleep'),
     {
       type: 'bar',
       options: {
+        maintainAspectRatio: false,
         plugins: {
-	  annotation: {
+          annotation: {
             annotations: {
               line: {
                 type: 'line',
-		yMin: 8,
-                yMax: 8,
+                yMin: 3,
+                yMax: 3,
               }
             }
           }
@@ -134,7 +181,7 @@
         datasets: [
           {
             label: 'Hours of sleep',
-            data: data.map(row => row.amount)
+            data: data.map(row => row.sleep.reduce((a, b) => a + b.duration, 0)),
           }
         ]
       }
