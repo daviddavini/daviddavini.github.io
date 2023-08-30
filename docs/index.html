@@ -78,6 +78,7 @@
       {
         type: 'bar',
         options: {
+          clip: false,
           scales: {
             x: {
               grid: {
@@ -107,6 +108,9 @@
                   type: 'line',
                   yMin: params.goal,
                   yMax: params.goal,
+                  borderColor: 'rgb(64, 200, 64)',
+                  borderWidth: 3,
+                  borderDash: [3],
                 }
               }
             }
