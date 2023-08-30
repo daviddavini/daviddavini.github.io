@@ -189,6 +189,16 @@ let data = [
         rating: 4,
       },
     ],
+    sleep: [
+      {
+        start: '21:30',
+        end: '23:30',
+      },
+      {
+        start: '02:00',
+        end: '08:00',
+      },
+    ],
   },
   { 
     day: '2023-08-28',
@@ -230,12 +240,8 @@ let data = [
     ],
     sleep: [
       {
-        start: '21:30',
-        end: '23:30',
-      },
-      {
-        start: '02:00',
-        end: '08:00',
+        start: '03:00',
+        end: '08:15',
       },
     ],
   },
@@ -275,12 +281,6 @@ let data = [
         note: 'to/from bus, around Beverly Hills',
         minutes: 10+10+15+10,
         intensity: 'medium',
-      },
-    ],
-    sleep: [
-      {
-        start: '03:00',
-        end: '08:15',
       },
     ],
   },
