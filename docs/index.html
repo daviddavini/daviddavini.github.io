@@ -15,9 +15,6 @@
 
 <DIV>
   <DIV>
-    <CANVAS id="caffeine"></CANVAS>
-  </DIV>
-  <DIV>
     <CANVAS id="books"></CANVAS>
   </DIV>
   <DIV>
@@ -27,7 +24,12 @@
     <CANVAS id="sleep"></CANVAS>
   </DIV>
   <DIV>
+    <CANVAS id="caffeine"></CANVAS>
+  </DIV>
+  <DIV>
     <CANVAS id="costs"></CANVAS>
+  </DIV>
+  <DIV>
   </DIV>
 </DIV>
 
@@ -152,8 +154,8 @@
                 return group_data.reduce((a, b) => a + params.amount_func(b), 0);
               }),
               backgroundColor: group.color,
-              borderColor: "rgb(30,60,45)",
-              borderWidth: 0,
+              borderColor: "rgb(200,200,200)",
+              borderWidth: 2,
             })
           ),
         },
@@ -167,9 +169,9 @@
     label: 'caffeine (mg)'.toUpperCase(),
     amount_func: x => x.amount,
     groups: [
-      {color: "rgb(0,120,120)", name: "tea", types: ["green tea", "black tea"]},
-      {color: "rgb(0,120,40)", name: "coffee", types: ["coffee"]}, 
-      {color: "rgb(80,120,0)", name: "energy drink", types: ["energy drink"]}, 
+      {color: "rgb(160,120,40)", name: "tea", types: ["green tea", "black tea"]},
+      {color: "rgb(160,120,0)", name: "coffee", types: ["coffee"]}, 
+      {color: "rgb(200,120,0)", name: "energy drink", types: ["energy drink"]}, 
     ],
   }
   makeChart(caffeine_params);
@@ -213,11 +215,11 @@
     id: 'costs',
     field: 'costs',
     goal: 50,
-    label: 'costs ($)'.toUpperCase(),
+    label: 'life cost ($)'.toUpperCase(),
     amount_func: b => b.price,
     groups: [
-      {color: "rgb(0,120,120)", name: "rent", types: ["housing"]},
-      {color: "rgb(0,120,40)", name: "food", types: ["food"]},
+      {color: "rgb(160,120,0)", name: "rent", types: ["housing"]},
+      {color: "rgb(200,120,0)", name: "food", types: ["food"]},
     ],
   };
   makeChart(costs_params);
