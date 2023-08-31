@@ -423,6 +423,11 @@ let data = [
         note: 'rent for orlando',
         price: 1300/30.5+75/69,
       },
+      {
+        type: 'transport',
+        note: 'bus',
+        price: 1.75,
+      },
     ],
   },
   { 
