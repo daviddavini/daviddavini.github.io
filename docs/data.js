@@ -283,12 +283,12 @@ let data = [
         intensity: 'medium',
       },
     ],
-    // sleep: [
-    //   {
-    //     start: '22:00',
-    //     end: '07:30',
-    //   },
-    // ],
+    sleep: [
+      {
+        start: '02:00',
+        end: '07:30',
+      },
+    ],
   },
   { 
     day: '2023-08-30',
@@ -316,7 +316,14 @@ let data = [
         type: 'textbook',
         name: 'Django Unleashed',
         start: 31,
-        end: 40,
+        end: 48,
+        rating: 4,
+      },
+      {
+        type: 'textbook',
+        name: 'Django Unleashed',
+        start: 765,
+        end: 767,
         rating: 4,
       },
     ],
@@ -329,8 +336,8 @@ let data = [
       },
       {
         type: 'walk',
-        note: 'to metro+bus, to bofa, to cu, to rp, to cu, to rp, to/from bus, to home',
-        minutes: 5+5+15+20+20+20+10+15,
+        note: 'to metro+bus, to bofa, to cu, to rp, to cu, to rp, to/from bus',
+        minutes: 5+5+15+20+20+20+10,
         intensity: 'medium',
       },
     ],
