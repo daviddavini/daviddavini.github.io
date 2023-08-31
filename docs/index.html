@@ -162,6 +162,12 @@
       }
     );
   }
+  BAD_1 = "rgb(105,80,25)"
+  BAD_2 = "rgb(105,80,0)"
+  BAD_3 = "rgb(130,80,0)"
+  GOOD_1 = "rgb(0,120,120)"
+  GOOD_2 = "rgb(0,120,40)"
+  GOOD_3 = "rgb(80,120,0)"
   const caffeine_params = {
     id: 'caffeine',
     field: 'caffeine',
@@ -169,9 +175,9 @@
     label: 'caffeine (mg)'.toUpperCase(),
     amount_func: x => x.amount,
     groups: [
-      {color: "rgb(160,120,40)", name: "tea", types: ["green tea", "black tea"]},
-      {color: "rgb(160,120,0)", name: "coffee", types: ["coffee"]}, 
-      {color: "rgb(200,120,0)", name: "energy drink", types: ["energy drink"]}, 
+      {color: BAD_1, name: "tea", types: ["green tea", "black tea"]},
+      {color: BAD_2, name: "coffee", types: ["coffee"]}, 
+      {color: BAD_3, name: "energy drink", types: ["energy drink"]}, 
     ],
   }
   makeChart(caffeine_params);
@@ -182,9 +188,9 @@
     label: 'books (pages)'.toUpperCase(),
     amount_func: b => b.end - b.start,
     groups: [
-      {color: "rgb(0,120,120)", name: "textbook", types: ['textbook']},
-      {color: "rgb(0,120,40)", name: "nonfiction", types: ["nonfiction"]}, 
-      {color: "rgb(80,120,0)", name: "fiction", types: ["fiction"]}, 
+      {color: GOOD_1, name: "textbook", types: ['textbook']},
+      {color: GOOD_2, name: "nonfiction", types: ["nonfiction"]}, 
+      {color: GOOD_3, name: "fiction", types: ["fiction"]}, 
     ],
   }
   makeChart(reading_params);
@@ -195,8 +201,8 @@
     label: 'exercise (mins)'.toUpperCase(),
     amount_func: b => b.minutes,
     groups: [
-      {color: "rgb(0,120,120)", name: "walk", types: ['walk']},
-      {color: "rgb(0,120,40)", name: "bike", types: ["bike"]}, 
+      {color: GOOD_1, name: "walk", types: ['walk']},
+      {color: GOOD_2, name: "bike", types: ["bike"]}, 
     ],
   }
   makeChart(exercise_params);
@@ -207,7 +213,7 @@
     label: 'sleep (mins)'.toUpperCase(),
     amount_func: b => b.duration,
     groups: [
-      {color: "rgb(0,120,120)", name: "night", types: [undefined]},
+      {color: GOOD_1, name: "night", types: [undefined]},
     ],
   }
   makeChart(sleep_params);
@@ -218,8 +224,8 @@
     label: 'life cost ($)'.toUpperCase(),
     amount_func: b => b.price,
     groups: [
-      {color: "rgb(160,120,0)", name: "rent", types: ["housing"]},
-      {color: "rgb(200,120,0)", name: "food", types: ["food"]},
+      {color: BAD_1, name: "rent", types: ["housing"]},
+      {color: BAD_2, name: "food", types: ["food"]},
     ],
   };
   makeChart(costs_params);
