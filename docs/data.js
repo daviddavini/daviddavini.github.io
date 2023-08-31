@@ -9,6 +9,13 @@ let data = [
         amount: 120,
       },
     ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+    ],
   },
   { 
     day: '2023-08-20',
@@ -30,6 +37,13 @@ let data = [
         name: 'Bigelow Green Tea',
         serving: '2 steeps',
         amount: 45,
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
       },
     ],
   },
@@ -56,6 +70,13 @@ let data = [
         intensity: 'medium',
       },
     ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+    ],
   },
   { 
     day: '2023-08-22',
@@ -78,6 +99,13 @@ let data = [
         note: 'to/from work',
         minutes: 10+10,
         intensity: 'medium',
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
       },
     ],
   },
@@ -116,6 +144,13 @@ let data = [
         intensity: 'high',
       },
     ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+    ],
   },
   { 
     day: '2023-08-24',
@@ -150,6 +185,13 @@ let data = [
         note: 'to/from Elysian Park',
         minutes: 10+10+15+10,
         intensity: 'high',
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
       },
     ],
   },
@@ -187,6 +229,13 @@ let data = [
         intensity: 'low',
       },
     ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+    ],
   },
   { 
     day: '2023-08-26',
@@ -212,6 +261,13 @@ let data = [
         start: 171,
         end: 183,
         rating: 3,
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
       },
     ],
   },
@@ -255,6 +311,13 @@ let data = [
       {
         start: '02:00',
         end: '08:00',
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
       },
     ],
   },
@@ -302,6 +365,13 @@ let data = [
         end: '08:15',
       },
     ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+    ],
   },
   { 
     day: '2023-08-29',
@@ -345,6 +415,13 @@ let data = [
       {
         start: '02:00',
         end: '07:30',
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
       },
     ],
   },
