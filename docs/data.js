@@ -283,5 +283,56 @@ let data = [
         intensity: 'medium',
       },
     ],
+    // sleep: [
+    //   {
+    //     start: '22:00',
+    //     end: '07:30',
+    //   },
+    // ],
+  },
+  { 
+    day: '2023-08-30',
+    caffeine: [
+      {
+        type: 'coffee',
+        name: 'Oro Instant Coffee',
+        serving: '2 tsp',
+        amount: 120,
+      },
+      {
+        type: 'coffee',
+        name: 'Cafe Alexander Large Coffee',
+        serving: '24 oz',
+        amount: 280,
+      },
+      {
+        type: 'energy drink',
+        name: 'Celsius Arctic Vibe',
+        amount: 200,
+      },
+    ],
+    reading: [
+      {
+        type: 'textbook',
+        name: 'Django Unleashed',
+        start: 31,
+        end: 40,
+        rating: 4,
+      },
+    ],
+    exercise: [
+      {
+        type: 'bike',
+        note: 'to/from work',
+        minutes: 10+10,
+        intensity: 'medium',
+      },
+      {
+        type: 'walk',
+        note: 'to metro+bus, to bofa, to cu, to rp, to cu, to rp, to/from bus, to home',
+        minutes: 5+5+15+20+20+20+10+15,
+        intensity: 'medium',
+      },
+    ],
   },
 ];
