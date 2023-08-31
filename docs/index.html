@@ -4,7 +4,7 @@
   }
   div {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     height: 45vh;
   }
@@ -25,6 +25,9 @@
   </DIV>
   <DIV>
     <CANVAS id="sleep"></CANVAS>
+  </DIV>
+  <DIV>
+    <CANVAS id="costs"></CANVAS>
   </DIV>
 </DIV>
 
@@ -65,6 +68,9 @@
     }
     if (!("sleep" in row)) {
       row.sleep = []
+    }
+    if (!("costs" in row)) {
+      row.costs = []
     }
   });
 
@@ -203,4 +209,16 @@
     ],
   }
   makeChart(sleep_params);
+  const costs_params = {
+    id: 'costs',
+    field: 'costs',
+    goal: 50,
+    label: 'costs ($)'.toUpperCase(),
+    amount_func: b => b.price,
+    groups: [
+      {color: "rgb(0,120,120)", name: "rent", types: ["housing"]},
+      {color: "rgb(0,120,40)", name: "food", types: ["food"]},
+    ],
+  };
+  makeChart(costs_params);
 </SCRIPT>

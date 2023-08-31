@@ -399,5 +399,17 @@ let data = [
         intensity: 'medium',
       },
     ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+      {
+        type: 'food',
+        note: 'lunch at cafe alexander, snack at cafe alexandar',
+        price: 21.90+15.81,
+      },
+    ],
   },
 ];
