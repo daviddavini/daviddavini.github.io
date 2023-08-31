@@ -138,6 +138,9 @@
             title: {
               display: true,
               text: params.label,
+              font: {
+                size: 20,
+              },
             },
             annotation: {
               annotations: {
@@ -145,9 +148,8 @@
                   type: 'line',
                   yMin: params.goal,
                   yMax: params.goal,
-                  borderColor: 'rgb(200, 0, 120)',
+                  borderColor: 'red',
                   borderWidth: 5,
-                  borderDash: [2],
                 }
               }
             }
