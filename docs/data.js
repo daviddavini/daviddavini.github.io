@@ -48,6 +48,14 @@ let data = [
         amount: 200,
       },
     ],
+    exercise: [
+      {
+        type: 'bike',
+        note: 'to/from work',
+        minutes: 10+10,
+        intensity: 'medium',
+      },
+    ],
   },
   { 
     day: '2023-08-22',
@@ -62,6 +70,14 @@ let data = [
         type: 'energy drink',
         name: 'Celsius Peach Vibe',
         amount: 200,
+      },
+    ],
+    exercise: [
+      {
+        type: 'bike',
+        note: 'to/from work',
+        minutes: 10+10,
+        intensity: 'medium',
       },
     ],
   },
@@ -86,6 +102,20 @@ let data = [
         amount: 75,
       },
     ],
+    exercise: [
+      {
+        type: 'bike',
+        note: 'to/from work',
+        minutes: 10+10,
+        intensity: 'medium',
+      },
+      {
+        type: 'bike',
+        note: 'to/from Elysian Park',
+        minutes: 10+10+15+10,
+        intensity: 'high',
+      },
+    ],
   },
   { 
     day: '2023-08-24',
@@ -108,6 +138,20 @@ let data = [
         amount: 75,
       },
     ],
+    exercise: [
+      {
+        type: 'bike',
+        note: 'to/from work',
+        minutes: 10+10,
+        intensity: 'medium',
+      },
+      {
+        type: 'bike',
+        note: 'to/from Elysian Park',
+        minutes: 10+10+15+10,
+        intensity: 'high',
+      },
+    ],
   },
   { 
     day: '2023-08-25',
@@ -127,6 +171,20 @@ let data = [
         type: 'energy drink',
         name: 'Celsius Peach Vibe',
         amount: 200,
+      },
+    ],
+    exercise: [
+      {
+        type: 'walk',
+        note: 'to work',
+        minutes: 10,
+        intensity: 'medium',
+      },
+      {
+        type: 'walk',
+        note: 'bar crawl',
+        minutes: 15,
+        intensity: 'low',
       },
     ],
   },
