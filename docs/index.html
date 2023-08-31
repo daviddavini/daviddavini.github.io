@@ -2,18 +2,24 @@
   * {
     background-color: rgb(10, 10, 15);
   }
-  div {
+  img {
+    opacity: 0.05;
+    width: 100%;
+    height: auto;
+    align-self: center;
+  }
+  .chart-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    height: 45vh;
+    height: 100%;
   }
   div > div {
-    margin: 2%;
+    margin: 3%;
   }
 </STYLE>
 
-<DIV>
+<DIV CLASS='chart-grid'>
   <DIV>
     <CANVAS id="books"></CANVAS>
   </DIV>
@@ -29,8 +35,9 @@
   <DIV>
     <CANVAS id="costs"></CANVAS>
   </DIV>
-  <DIV>
-  </DIV>
+  <!--
+    <IMG SRC="samus.gif"/>
+  -->
 </DIV>
 
 <SCRIPT src="https://cdn.jsdelivr.net/npm/chart.js"></SCRIPT>
