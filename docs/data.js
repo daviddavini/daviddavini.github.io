@@ -200,7 +200,7 @@ let data = [
     ],
     reading: [
       {
-        type: 'computer programming',
+        type: 'computer science',
         name: 'Mastering Regular Expressions',
         start: 1,
         end: 68,
@@ -233,7 +233,7 @@ let data = [
     ],
     reading: [
       {
-        type: 'computer programming',
+        type: 'computer science',
         name: 'Mastering Regular Expressions',
         start: 68,
         end: 92,
@@ -277,7 +277,7 @@ let data = [
     ],
     reading: [
       {
-        type: 'computer programming',
+        type: 'computer science',
         name: 'Mastering Regular Expressions',
         start: 92,
         end: 95,
@@ -387,14 +387,14 @@ let data = [
     ],
     reading: [
       {
-        type: 'computer programming',
+        type: 'computer science',
         name: 'Django Unleashed',
         start: 31,
         end: 48,
         rating: 4,
       },
       {
-        type: 'computer programming',
+        type: 'computer science',
         name: 'Django Unleashed',
         start: 765,
         end: 767,

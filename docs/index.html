@@ -201,7 +201,7 @@
     palette: 'bad',
     label: 'caffeine (mg)'.toUpperCase(),
     amount_func: x => x.amount,
-    groups: ["green tea", "black tea", "coffee", "energy drink"],
+    groups: ["energy drink", "coffee", "black tea", "green tea"],
   }
   makeChart(caffeine_params);
   const reading_params = {
@@ -211,7 +211,7 @@
     palette: 'good',
     label: 'books (pages)'.toUpperCase(),
     amount_func: b => b.end - b.start,
-    groups: ["political science", "computer programming", "engineering"],
+    groups: ["computer science", "political science", "engineering"],
   }
   makeChart(reading_params);
   const exercise_params = {
