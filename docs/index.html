@@ -148,13 +148,21 @@
             },
             annotation: {
               annotations: {
-                line: {
+                pass_line: {
+                  type: 'line',
+                  yMin: params.pass,
+                  yMax: params.pass,
+                  borderColor: 'rgb(255,255,0,0.5)',
+                  borderWidth: 4,
+                  borderDash: [4],
+                },
+                goal_line: {
                   type: 'line',
                   yMin: params.goal,
                   yMax: params.goal,
                   borderColor: 'rgb(255,255,0,0.5)',
                   borderWidth: 4,
-                }
+                },
               }
             }
           }
@@ -192,6 +200,7 @@
     id: 'caffeine',
     field: 'caffeine',
     goal: 30,
+    pass: 115,
     palette: 'bad',
     label: 'caffeine (mg)'.toUpperCase(),
     amount_func: x => x.amount,
@@ -202,6 +211,7 @@
     id: 'books',
     field: 'reading',
     goal: 100,
+    pass: 50,
     palette: 'good',
     label: 'books (pages)'.toUpperCase(),
     amount_func: b => b.end - b.start,
@@ -212,6 +222,7 @@
     id: 'exercise',
     field: 'exercise',
     goal: 3*60,
+    pass: 60,
     palette: 'good',
     label: 'exercise (mins)'.toUpperCase(),
     amount_func: b => b.minutes,
@@ -222,6 +233,7 @@
     id: 'sleep',
     field: 'sleep',
     goal: 9*60,
+    pass: 7*60,
     palette: 'good',
     label: 'sleep (mins)'.toUpperCase(),
     amount_func: b => b.duration,
@@ -232,6 +244,7 @@
     id: 'costs',
     field: 'costs',
     goal: 50,
+    pass: 100,
     palette: 'bad',
     label: 'expenses ($)'.toUpperCase(),
     amount_func: b => b.price,
