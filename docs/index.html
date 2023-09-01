@@ -152,7 +152,7 @@
                   type: 'line',
                   yMin: params.goal,
                   yMax: params.goal,
-                  borderColor: 'rgb(255,255,255,0.3)',
+                  borderColor: 'rgb(255,255,0,0.5)',
                   borderWidth: 4,
                 }
               }
@@ -168,8 +168,8 @@
                 return group_data.reduce((a, b) => a + params.amount_func(b), 0);
               }),
               backgroundColor: get_color(params.palette, i),
-              borderColor: "rgb(200,200,200)",
-              borderWidth: 0,
+              borderColor: "rgb(0,100,40)",
+              borderWidth: 4,
             })
           ),
         },
@@ -178,16 +178,10 @@
   }
   COLORS = {
     bad: [
-      "rgb(105,60,0)",
-      "rgb(130,40,0)",
-      "rgb(130,0,0)",
-      "rgb(160,0,20)",
+      "rgb(0,200,80)",
     ],
     good: [
-      "rgb(0,0,160)",
-      "rgb(0,80,120)",
-      "rgb(0,120,40)",
-      "rgb(120,120,0)",
+      "rgb(0,200,80)",
     ],
   }
   function get_color(palette, i) {
