@@ -485,6 +485,13 @@ let data = [
         intensity: 'medium',
       },
     ],
+    sleep: [
+      {
+        type: 'night',
+        start: '02:15',
+        end: '07:00',
+      },
+    ],
     costs: [
       {
         type: 'housing',
