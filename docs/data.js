@@ -494,4 +494,43 @@ let data = [
       },
     ],
   },
+  { 
+    day: '2023-08-31',
+    caffeine: [
+      {
+        type: 'coffee',
+        name: 'freshly-ground coffee beans',
+        serving: '12g',
+        amount: 75*2.6,
+      },
+      {
+        type: 'energy drink',
+        name: 'Celsius Tropical Vibe',
+        amount: 200,
+      },
+    ],
+    reading: [
+    ],
+    exercise: [
+      {
+        type: 'bike',
+        note: 'to/from work',
+        minutes: 10+10,
+        intensity: 'medium',
+      },
+      {
+        type: 'bike',
+        note: 'to/from bank',
+        minutes: 35,
+        intensity: 'medium',
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+    ],
+  },
 ];
