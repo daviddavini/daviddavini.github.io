@@ -305,10 +305,12 @@ let data = [
     ],
     sleep: [
       {
+        type: 'night',
         start: '21:30',
         end: '23:30',
       },
       {
+        type: 'night',
         start: '02:00',
         end: '08:00',
       },
@@ -361,6 +363,7 @@ let data = [
     ],
     sleep: [
       {
+        type: 'night',
         start: '03:00',
         end: '08:15',
       },
@@ -413,6 +416,7 @@ let data = [
     ],
     sleep: [
       {
+        type: 'night',
         start: '02:00',
         end: '07:30',
       },
