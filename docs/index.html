@@ -159,13 +159,13 @@
         },
         data: {
           labels: data.map(row => row.day),
-          datasets: params.groups.map(group => ({
-              label: group.name,
+          datasets: params.groups.map((group, i) => ({
+              label: group,
               data: data.map(row => {
-                const group_data = row[params.field].filter(x => group.types.includes(x.type));
+                const group_data = row[params.field].filter(x => group == x.type);
                 return group_data.reduce((a, b) => a + params.amount_func(b), 0);
               }),
-              backgroundColor: group.color,
+              backgroundColor: get_color(params.palette, i),
               borderColor: "rgb(200,200,200)",
               borderWidth: 0,
             })
@@ -174,72 +174,70 @@
       }
     );
   }
-  BAD_1 = "rgb(105,80,0)"
-  BAD_2 = "rgb(130,40,0)"
-  BAD_3 = "rgb(130,0,0)"
-  GOOD_1 = "rgb(0,80,120)"
-  GOOD_2 = "rgb(0,120,40)"
-  GOOD_3 = "rgb(120,120,0)"
+  COLORS = {
+    bad: [
+      "rgb(105,80,0)",
+      "rgb(130,40,0)",
+      "rgb(130,0,0)",
+    ],
+    good: [
+      "rgb(0,80,120)",
+      "rgb(0,120,40)",
+      "rgb(120,120,0)",
+    ],
+  }
+  function get_color(palette, i) {
+    const colors = COLORS[palette];
+    return colors[i % colors.length]
+  }
   const caffeine_params = {
     id: 'caffeine',
     field: 'caffeine',
     goal: 30,
+    palette: 'bad',
     label: 'caffeine (mg)'.toUpperCase(),
     amount_func: x => x.amount,
-    groups: [
-      {color: BAD_1, name: "tea", types: ["green tea", "black tea"]},
-      {color: BAD_2, name: "coffee", types: ["coffee"]}, 
-      {color: BAD_3, name: "energy drink", types: ["energy drink"]}, 
-    ],
+    groups: ["green tea", "black tea", "coffee", "energy drink"],
   }
   makeChart(caffeine_params);
   const reading_params = {
     id: 'books',
     field: 'reading',
     goal: 100,
+    palette: 'good',
     label: 'books (pages)'.toUpperCase(),
     amount_func: b => b.end - b.start,
-    groups: [
-      {color: GOOD_1, name: "textbook", types: ['textbook']},
-      {color: GOOD_2, name: "nonfiction", types: ["nonfiction"]}, 
-      {color: GOOD_3, name: "fiction", types: ["fiction"]}, 
-    ],
+    groups: ["political science", "computer programming", "engineering"],
   }
   makeChart(reading_params);
   const exercise_params = {
     id: 'exercise',
     field: 'exercise',
     goal: 3*60,
+    palette: 'good',
     label: 'exercise (mins)'.toUpperCase(),
     amount_func: b => b.minutes,
-    groups: [
-      {color: GOOD_1, name: "walk", types: ['walk']},
-      {color: GOOD_2, name: "bike", types: ["bike"]}, 
-    ],
+    groups: ["bike", "walk"],
   }
   makeChart(exercise_params);
   const sleep_params = {
     id: 'sleep',
     field: 'sleep',
     goal: 9*60,
+    palette: 'good',
     label: 'sleep (mins)'.toUpperCase(),
     amount_func: b => b.duration,
-    groups: [
-      {color: GOOD_1, name: "night", types: [undefined]},
-    ],
+    groups: ["night"],
   }
   makeChart(sleep_params);
   const costs_params = {
     id: 'costs',
     field: 'costs',
     goal: 50,
+    palette: 'bad',
     label: 'life cost ($)'.toUpperCase(),
     amount_func: b => b.price,
-    groups: [
-      {color: BAD_1, name: "rent", types: ["housing"]},
-      {color: BAD_2, name: "food", types: ["food"]},
-      {color: BAD_3, name: "transport", types: ["transport"]},
-    ],
+    groups: ["housing", "food", "transport"],
   };
   makeChart(costs_params);
 </SCRIPT>

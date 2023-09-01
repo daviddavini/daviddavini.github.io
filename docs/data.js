@@ -249,14 +249,14 @@ let data = [
     ],
     reading: [
       {
-        type: 'textbook',
+        type: 'computer programming',
         name: 'Mastering Regular Expressions',
         start: 1,
         end: 68,
         rating: 5,
       },
       {
-        type: 'nonfiction',
+        type: 'political science',
         name: 'The Autobiography of Malcolm X',
         start: 171,
         end: 183,
@@ -289,14 +289,14 @@ let data = [
     ],
     reading: [
       {
-        type: 'textbook',
+        type: 'computer programming',
         name: 'Mastering Regular Expressions',
         start: 68,
         end: 92,
         rating: 4,
       },
       {
-        type: 'nonfiction',
+        type: 'political science',
         name: 'The Autobiography of Malcolm X',
         start: 183,
         end: 218,
@@ -338,7 +338,7 @@ let data = [
     ],
     reading: [
       {
-        type: 'textbook',
+        type: 'computer programming',
         name: 'Mastering Regular Expressions',
         start: 92,
         end: 95,
@@ -390,7 +390,7 @@ let data = [
     ],
     reading: [
       {
-        type: 'nonfiction',
+        type: 'engineering',
         name: 'Inventive Wizard: George Westinghouse',
         start: 11,
         end: 54,
@@ -453,14 +453,14 @@ let data = [
     ],
     reading: [
       {
-        type: 'textbook',
+        type: 'computer programming',
         name: 'Django Unleashed',
         start: 31,
         end: 48,
         rating: 4,
       },
       {
-        type: 'textbook',
+        type: 'computer programming',
         name: 'Django Unleashed',
         start: 765,
         end: 767,
