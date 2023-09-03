@@ -466,11 +466,121 @@ let data = [
         intensity: 'medium',
       },
     ],
+    sleep: [
+      {
+        type: 'night',
+        start: '02:40',
+        end: '08:40',
+      },
+    ],
     costs: [
       {
         type: 'housing',
         note: 'rent for orlando',
         price: 1300/30.5+75/69,
+      },
+    ],
+  },
+  { 
+    day: '2023-09-01',
+    caffeine: [
+      {
+        type: 'coffee',
+        name: 'freshly-ground coffee beans',
+        serving: '5g',
+        amount: 75,
+      },
+      {
+        type: 'energy drink',
+        name: 'Celsius Arctic Vibe',
+        amount: 200,
+      },
+    ],
+    reading: [
+      {
+        type: 'engineering',
+        name: 'Inventive Wizard: George Westinghouse',
+        start: 54,
+        end: 60,
+        rating: 4,
+      },
+      {
+        type: 'political science',
+        name: 'The Autobiography of Malcolm X',
+        start: 218,
+        end: 232,
+        rating: 4,
+      },
+    ],
+    exercise: [
+      {
+        type: 'bike',
+        note: 'to/from work',
+        minutes: 10+10,
+        intensity: 'medium',
+      },
+      {
+        type: 'walk',
+        note: 'to airport',
+        minutes: 30,
+        intensity: 'medium',
+      },
+    ],
+    sleep: [
+      {
+        type: 'night',
+        start: '00:15',
+        end: '06:15',
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+      {
+        type: 'transport',
+        note: 'FlyAway bus to LAX',
+        price: 8.75,
+      },
+    ],
+  },
+  { 
+    day: '2023-09-02',
+    caffeine: [
+      {
+        type: 'energy drink',
+        name: 'Celsius Arctic Vibe',
+        amount: 200,
+      },
+    ],
+    reading: [],
+    exercise: [
+      {
+        type: 'walk',
+        note: 'hike Mt. Lassen',
+        minutes: 110,
+        intensity: 'medium',
+      },
+    ],
+    sleep: [
+      {
+        type: 'night',
+        start: '11:00',
+        end: '7:30',
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+      {
+        type: 'food',
+        note: 'naked green juice',
+        price: 4.75,
       },
     ],
   },
