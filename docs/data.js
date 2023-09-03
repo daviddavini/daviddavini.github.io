@@ -567,7 +567,7 @@ let data = [
     sleep: [
       {
         type: 'night',
-        start: '11:00',
+        start: '23:00',
         end: '7:30',
       },
     ],
