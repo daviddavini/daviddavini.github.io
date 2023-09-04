@@ -584,4 +584,37 @@ let data = [
       },
     ],
   },
+  { 
+    day: '2023-09-03',
+    caffeine: [
+      {
+        type: 'coffee',
+        name: 'Homemade Drip Coffee',
+        amount: 100*3,
+      },
+    ],
+    reading: [],
+    exercise: [
+      {
+        type: 'stand',
+        note: 'at bookstore, at party',
+        minutes: 120,
+        intensity: 'low',
+      },
+    ],
+    sleep: [
+      {
+        type: 'night',
+        start: '22:30',
+        end: '6:50',
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+    ],
+  },
 ];
