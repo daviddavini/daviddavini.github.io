@@ -135,10 +135,20 @@ function makeChart(params) {
 }
 COLORS = {
   bad: [
-    "rgb(0,200,80)",
+    "#00FF00",
+    "#006094",
+    "#00C03B",
+    "#0040B1",
+    "#00A059",
+    "#0020CE",
   ],
   good: [
-    "rgb(0,200,80)",
+    "#00FF00",
+    "#006094",
+    "#00C03B",
+    "#0040B1",
+    "#00A059",
+    "#0020CE",
   ],
 }
 function get_color(palette, i) {
@@ -175,7 +185,7 @@ const exercise_params = {
   palette: 'good',
   label: 'exercise (mins)'.toUpperCase(),
   amount_func: b => b.minutes,
-  groups: ["bike", "walk"],
+  groups: ["bike", "walk", "stand"],
 }
 makeChart(exercise_params);
 const sleep_params = {
