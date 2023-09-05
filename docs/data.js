@@ -542,7 +542,7 @@ let data = [
       {
         type: 'transport',
         note: 'FlyAway bus to LAX',
-        price: 8.75,
+        price: 9.75,
       },
     ],
   },
@@ -614,6 +614,60 @@ let data = [
         type: 'housing',
         note: 'rent for orlando',
         price: 1300/30.5+75/69,
+      },
+    ],
+  },
+  { 
+    day: '2023-09-04',
+    caffeine: [
+      {
+        type: 'energy drink',
+        name: 'Starbucks Doubleshot Energy Espresso Mocha',
+        amount: 135,
+      },
+      {
+        type: 'coffee',
+        name: 'Southwest complementary coffee',
+        amount: 90,
+      },
+      {
+        type: 'energy drink',
+        name: 'Celsius Sparkling Kiwi Guava',
+        amount: 200,
+      },
+    ],
+    reading: [
+      {
+        type: 'political science',
+        name: 'The Autobiography of Malcolm X',
+        start: 232,
+        end: 269,
+        rating: 4,
+      },
+    ],
+    exercise: [
+      {
+        type: 'walk',
+        note: 'at airports, to home',
+        minutes: 15+30,
+        intensity: 'low',
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
+      },
+      {
+        type: 'food',
+        note: 'starbucks energy drink',
+        price: 6.02,
+      },
+      {
+        type: 'transport',
+        note: 'FlyAway bus to LAX',
+        price: 9.75,
       },
     ],
   },
