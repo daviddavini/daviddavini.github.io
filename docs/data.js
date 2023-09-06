@@ -641,7 +641,7 @@ let data = [
         type: 'political science',
         name: 'The Autobiography of Malcolm X',
         start: 232,
-        end: 269,
+        end: 271,
         rating: 4,
       },
     ],
@@ -652,6 +652,8 @@ let data = [
         minutes: 15+30,
         intensity: 'low',
       },
+    ],
+    sleep: [
     ],
     costs: [
       {
@@ -668,6 +670,66 @@ let data = [
         type: 'transport',
         note: 'FlyAway bus to LAX',
         price: 9.75,
+      },
+    ],
+  },
+  { 
+    day: '2023-09-05',
+    caffeine: [
+      {
+        type: 'coffee',
+        name: 'Allied International Corp. Instant Coffee Blend',
+        serving: '4 tsp',
+        amount: 240,
+      },
+      {
+        type: 'black tea',
+        name: 'Twinnings Earl Grey Tea',
+        serving: '3 steeps',
+        amount: 75,
+      },
+      {
+        type: 'green tea',
+        name: 'Cold Brew Green Tea Bag',
+        serving: '0.5 steep',
+        amount: 20,
+      },
+    ],
+    reading: [
+      {
+        type: 'political science',
+        name: 'The Autobiography of Malcolm X',
+        start: 271,
+        end: 293,
+        rating: 4,
+      },
+    ],
+    exercise: [
+      {
+        type: 'bike',
+        note: 'to/from work, to store',
+        minutes: 10+10+5,
+        intensity: 'medium',
+      },
+      {
+        type: 'walk',
+        note: 'home from store',
+        minutes: 15,
+        intensity: 'low',
+      },
+    ],
+    sleep: [
+      {
+        type: 'night',
+        start: '22:00',
+        end: '8:00',
+      },
+    ],
+    costs: [
+      {
+        type: 'housing',
+        note: 'rent for orlando',
+        price: 1300/30.5+75/69,
       },
     ],
   },
